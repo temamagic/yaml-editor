@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/Schema",
+  "$defs": {
+    "ListItem": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "name",
+        "age"
+      ]
+    },
+    "Schema": {
+      "properties": {
+        "list_items": {
+          "items": {
+            "$ref": "#/$defs/ListItem"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "list_items"
+      ]
+    }
+  }
+}
